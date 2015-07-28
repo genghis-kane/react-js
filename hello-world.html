@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+    <script src="./bower_components/react/react.js"></script>
+    <script src="./bower_components/react/JSXTransformer.js"></script>
+    <script src="./bower_components/jQuery/dist/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="content"></div>
+
+    <!-- ES6 not supported by Chrome?? 
+    <script type="text/jsx">
+    	class HelloComponent extends React.Component {  
+  			render() {
+    			return <div>Hello {this.props.name}</div>;
+  			}
+		}
+
+		React.render(<HelloComponent name="Jess" />, mountNode);
+
+    </script>
+    -->
+
+    <!-- Back to ES5 -->
+    <div id="content"></div>
+    <script type="text/jsx">
+    var HelloComponent = React.createClass({  
+      render: function() {
+        return <div>Hello {this.props.name}</div>;
+      }
+    });
+
+    React.render(<HelloComponent name="Jess" />, document.getElementById('content'));
+
+    </script>
+  </body>
+</html>
